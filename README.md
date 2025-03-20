@@ -10,6 +10,10 @@ This React application provides an interactive dashboard for exploring metabolom
 - **Interactive Selection**: Click on data points to view detailed information
 - **Synchronized Highlights**: Selections in one plot are reflected in the other plot
 
+## Live Demo
+
+You can explore the live demo of the application here: [Metabolomics Dashboard Live Demo](https://metabolite.atedgimatan.com)
+
 ## Setup Instructions
 
 ### Prerequisites
