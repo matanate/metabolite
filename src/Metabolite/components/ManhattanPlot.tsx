@@ -1,5 +1,6 @@
 // components/ManhattanPlot.tsx
 import { Box, Button, Typography } from "@mui/material";
+import type { ActiveElement, ChartEvent, TooltipItem } from "chart.js";
 import {
   ChartData,
   Chart as ChartJS,
@@ -146,7 +147,7 @@ const ManhattanPlot: React.FC<ManhattanPlotProps> = ({
           intersect: true,
           callbacks: {
             title: () => `Metabolite:`,
-            label: (item) => {
+            label: (item: TooltipItem<"scatter">) => {
               const point = item.raw as ChartPoint;
               return [
                 `ID: ${point.metabolite_id}`,
@@ -186,7 +187,7 @@ const ManhattanPlot: React.FC<ManhattanPlotProps> = ({
           },
         },
       },
-      onClick: (event, elements) => {
+      onClick: (event: ChartEvent, elements: ActiveElement[]) => {
         if (elements.length > 0) {
           const clickedElement = elements[0];
           const datasetIndex = clickedElement.datasetIndex;
